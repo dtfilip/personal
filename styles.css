@@ -1,0 +1,418 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.container {
+  position: relative;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-1 {
+  width: 100%;
+  height: 100vh;
+  background: #4169e1;
+  position: relative;
+}
+
+.section-1-heading {
+  font-size: 6rem;
+  font-weight: 700;
+  color: #fff;
+  padding: 0 3rem;
+  margin-bottom: 5rem;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  text-shadow: 0.2rem 0.2rem 1rem #555;
+  transform: skew(-10deg);
+  position: absolute;
+  top: 10%;
+  left: 30%;
+}
+
+.person-name {
+  font-size: 4rem;
+  color: #fff;
+  background-color: #85603f;
+  margin: 5rem 0;
+  padding: 0.5rem 3rem;
+  letter-spacing: 0.3rem;
+  transform: skew(-10deg);
+  position: absolute;
+  top: 45%;
+  left: 15%;
+}
+
+.img-wrapper {
+  position: absolute;
+  top: 40%;
+  right: 10%;
+}
+
+.navbar {
+  width: 100%;
+  height: 4rem;
+  background-color: #85603f;
+  box-shadow: 0.2rem 0.2rem 0.5rem #555;
+  position: fixed;
+  bottom: 0;
+  z-index: 300;
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.navbar-link {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 3rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.navbar-link:hover {
+  color: #fff;
+}
+
+.navbar-link::before {
+  content: "";
+  width: 0;
+  height: 0.2rem;
+  background-color: #fff;
+  position: absolute;
+  right: -15%;
+  bottom: -0.3rem;
+  transition: width 0.2s;
+}
+
+.navbar-link:hover::before {
+  width: 130%;
+}
+
+.section-2 {
+  width: 100%;
+  height: 100vh;
+  padding: 10rem 0 10rem 0;
+  background-color: #fffafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-2-heading {
+  font-size: 5rem;
+  color: #85603f;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  margin-bottom: 15rem;
+  border-bottom: 0.3rem solid #85603f;
+  text-shadow: 0.2rem 0.2rem 0.5rem #555;
+}
+
+.services {
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.service {
+  text-align: center;
+}
+
+.service:first-child,
+.service:last-child {
+  align-self: flex-start;
+}
+
+.service i {
+  font-size: 10rem;
+  color: #85603f;
+  margin-bottom: 2rem;
+  text-shadow: 0.1rem 0.1rem 0.5rem #555;
+}
+
+.service h2 {
+  font-size: 2rem;
+  color: #fffafa;
+  background-color: #85603f;
+  width: 25rem;
+  letter-spacing: 0.3rem;
+  transform: skew(-10deg);
+  box-shadow: 0.2rem 0.2rem 0.5rem #555;
+}
+
+.section-3 {
+  width: 100%;
+  height: 100%;
+  padding: 10rem 0 10rem 0;
+  background:#85603f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-3-heading{
+  font-size: 5rem;
+  color: #fffafa;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  margin-bottom: 7rem;
+  border-bottom: 0.3rem solid #fffafa;
+  text-shadow: 0.2rem 0.2rem 0.5rem #555;
+}
+
+.portfolio-wrapper{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap:5rem;
+}
+
+.portfolio-card{
+  width:70rem;
+  height:50rem;
+  position:relative;
+}
+
+.portfolio-website img{
+  width:100%;
+  height:100%;
+  position:abolute;
+  top:0;
+  left:0;
+}
+
+.portfolio-website-title{
+  position:absolute;
+  bottom:0;
+  right:0;
+  background-color: #4169e1;
+  color:#fffafa;
+  font-size: 3.5rem;
+  padding:2rem;
+}
+
+.section-4 {
+  width: 100%;
+  height: 100%;
+  padding: 10rem 0 10rem 0;
+  background: url("images/road.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-4-heading {
+  font-size: 5rem;
+  color: #fffafa;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  margin-bottom: 7rem;
+  border-bottom: 0.3rem solid #fffafa;
+  text-shadow: 0.2rem 0.2rem 0.5rem #555;
+}
+
+.form {
+  width: 45rem;
+  padding: 4rem;
+  background-color: #fffafa;
+  color: #85603f;
+  margin-right: 0 auto;
+  border-radius: 2rem;
+  box-shadow: 0.3rem 0.3rem 1rem #555;
+}
+
+.form-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-container input,
+input[type="submit"],
+input[type="reset"],
+.input-container textarea {
+  margin-bottom: 1rem;
+  border: none;
+  outline: none;
+  width: 100%;
+  background: transparent;
+  border-bottom: 0.1rem solid #85603f;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  border: none;
+  background: #85603f;
+}
+
+.input-container input,
+.input-container textarea,
+.input-container label {
+  padding: 0.8rem;
+  color: #85603f;
+  font-size: 1.5rem;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  padding: 0.8rem;
+  color: #fffafa;
+  font-size: 1.5rem;
+}
+
+.input-container label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transition: all 0.45s ease-in-out;
+}
+
+.input-container input:focus ~ label,
+.input-container input:valid ~ label,
+.input-container textarea:focus ~ label,
+.input-container textarea:valid ~ label {
+  top: -1rem;
+  left: 0;
+  font-size: 0.8rem;
+  color: #85603f;
+}
+
+input[type="submit"] {
+  margin-top: 4rem;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
+}
+
+.sent {
+  font-size: 3rem;
+  color: #85603f;
+  background-color: #fffafa;
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: 0.3rem 0.3rem 1rem #555;
+  display:none;  /* If the site is on a server display:none should be disabled */
+}
+
+
+@media (max-width:1150px){
+  .section-1{
+    height:100%;
+    display:flex; 
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    gap:5rem;
+    padding:5rem 2rem;
+  }
+
+  .section-1-heading{
+    position: relative;
+    top:0;
+    left:0;
+  }
+  .person-name{
+    position: relative;
+    top:0;
+    left:0;
+  }
+  .img-wrapper{
+    position: relative;
+    top:0;
+    left:0;
+  }
+}
+
+@media (max-width:1020px) {
+  .section-2{
+    height:100%;
+  }
+  .services{
+    height:100%;
+    gap:5rem;
+  }
+}
+
+@media (max-width:710px){
+  .portfolio-card{
+    width:40rem;
+    height:20rem;
+  }
+
+  .portfolio-website-title{
+    font-size: 2rem;
+  }
+}
+
+@media (max-width:550px){
+    .img-wrapper img {
+      width:30rem;
+      height:20rem;
+    }
+
+    .form {
+      width:30rem;
+    }
+
+    .section-1-heading{
+      font-size: 4rem;
+    }
+
+    .person-name {
+      font-size: 2rem;
+    }
+}
+
+@media (max-width:410px){
+  .portfolio-card{
+    width:20rem;
+    height:10rem;
+  }
+
+  .portfolio-website-title{
+    font-size: 1rem;
+  }
+
+ 
+  .section-2-heading,
+  .section-3-heading,
+  .section-4-heading {
+    font-size:2rem;
+  }
+}

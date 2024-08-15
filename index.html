@@ -1,0 +1,164 @@
+<?php
+
+$message_sent =false;
+
+if(isset($_POST['email']) && $_POST['email'] != ''){
+
+    if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ){
+		
+        $firstname = $_POST['firstname'];
+        $lastname = $_POST['lastname'];
+        $email = $_POST['email'];
+        $subject = $_POST['subject'];
+        $message = $_POST['message'];
+		
+		$headers = "Content-Type: text/html; charset=utf-8\r\n";
+		
+        $to = "webmaster@dkfilippou.eu";
+        $body = "";
+
+        $body .= "From: " .$firstname. " " .$lastname. "\r\n";
+        $body .= "E-mail: " .$email. "\r\n";
+        $body .= "Subject: " .$subject. "\r\n";
+        $body .= "Message: " .$message. "\r\n";
+		
+		mail($to, $subject, $body, $headers);
+
+        $message_sent = true;
+
+    }
+}
+?>
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="index,follow" />
+        <meta name="keywords" content="html5, meta, keywords" />
+        <meta name="description" content="Dimitris Filippou is a Full Stack Web Developer, who brings your ideas into real websites." />
+        <meta name="author" content="Dimitris Filippou" />
+        <title>Dimitris Filippou - Web Developer</title>
+        <link rel="icon" href="images/favicon.png" />
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container">
+            
+                    
+                    <?php
+
+                    if($message_sent){
+
+                    ?>
+					<div class="center">
+                    	<h3 class="sent center">Thank you for your message!</h3>
+					</div>
+					<nav class="navbar center">
+                		<a href="/" class="navbar-link">Home</a>
+            		</nav>
+                    <?php
+					}
+                    else{
+
+                    ?>
+		<section class="section-1" id="home">
+                <h1 class="section-1-heading">
+                    Web Developer
+                </h1>
+                <h3 class="person-name">Dimitris Filippou</h3>
+                <div class="img-wrapper">
+                    <img src="images/web.png" alt="Web Development" />
+                </div>
+            </section>
+            <nav class="navbar center">
+                <a href="#home" class="navbar-link">Home</a>
+                <a href="#about" class="navbar-link">About</a>
+                <a href="#portfolio" class="navbar-link">Portfolio</a>
+                <a href="#contact" class="navbar-link">Contact</a>
+            </nav>
+            <section class="section-2" id="about">
+                <h1 class="section-2-heading">About Me</h1>
+                <div class="services">
+                    <div class="service">
+                        <i class="far fa-lightbulb"></i>
+                        <h2 class="service-heading">Creative</h2>
+                    </div>
+                    <div class="service">
+                        <i class="fas fa-calculator"></i>
+                        <h2 class="service-heading">Problem Solving</h2>
+                    </div>
+                    <div class="service">
+                        <i class="fas fa-running"></i>
+                        <h2 class="service-heading">Fast</h2>
+                    </div>
+                    <div class="service">
+                        <i class="fas fa-rocket"></i>
+                        <h2 class="service-heading">Dynamic</h2>
+                    </div>
+                </div>
+            </section>
+            <section class="section-3" id="portfolio">
+                <h1 class="section-3-heading">Portfolio</h1>
+                <div class="portfolio-wrapper">
+                    <div class="portfolio-card">
+                        <a class="portfolio-website"href="https://dtfilip.github.io/bookstore/"><img src="images/bookstore.jpg" alt="Bookstore"></a>
+                        <h4 class="portfolio-website-title">Bookstore</h4>
+                    </div>
+                    <div class="portfolio-card">
+                        <a class="portfolio-website"href="https://dtfilip.github.io/bmicalculator/"><img src="images/bmi-calculator.jpg" alt="BMI Calculator"></a>
+                        <h4 class="portfolio-website-title">BMI Calculator</h4>
+                    </div>
+                    <div class="portfolio-card">
+                        <a class="portfolio-website"href="https://dtfilip.github.io/dclock/"><img src="images/date-time.jpg" alt="Date and Time"></a>
+                        <h4 class="portfolio-website-title">Date and Time</h4>
+                    </div>
+                    <div class="portfolio-card">
+                        <a class="portfolio-website"href="https://dtfilip.github.io/architect/"><img src="images/architect.jpg" alt="Architect"></a>
+                        <h4 class="portfolio-website-title">Architect</h4>
+                    </div>
+                    <div class="portfolio-card">
+                        <a class="portfolio-website"href="https://dtfilip.github.io/beach/"><img src="images/beach.jpg" alt="The Beach"></a>
+                        <h4 class="portfolio-website-title">The Beach</h4>
+                    </div>
+                </div>
+            </section>
+            <section class="section-4" id="contact">
+                <h1 class="section-4-heading">Contact Me</h1>
+                    <form action="index.php" method="POST" class="form">
+                        <h2 class="form-heading">Contact form</h2>
+                        <div class="input-container">
+                            <input type="text" name="firstname" id="first-name" required />
+                            <label for="first-name">Firstname</label>
+                        </div>
+                        <div class="input-container">
+                            <input type="text" name="lastname" id="last-name" required />
+                            <label for="last-name">Lastname</label>
+                        </div>
+                        <div class="input-container">
+                            <input type="email" name="email" id="email" required />
+                            <label for="email">E-mail</label>
+                        </div>
+                        <div class="input-container">
+                            <input type="text" name="subject" id="subject" required />
+                            <label for="subject">Subject</label>
+                        </div>
+                        <div class="input-container">
+                            <textarea name="message" rows="10" id="message" required></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                        <input type="submit" value="Send" />
+                        <input type="reset" value="Clear fields" />
+                    </form>
+					<?php
+					}
+					?>
+            </section>
+        </div>
+    </body>
+</html>
